@@ -5,7 +5,11 @@ import DBConnection from './database/db.js'
 import path from 'path'
 
 const app=express()
-app.use(cors())
+app.use(cors({
+    origin: "https://render-share.onrender.com", // Replace '*' with your frontend URL in production
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true // Allow credentials
+  }));
 app.use('/',router)
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve()
