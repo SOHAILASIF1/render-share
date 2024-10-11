@@ -5,7 +5,7 @@ import axios from 'axios'
 export const uploadFile= async(data)=>{
     
     try {
-         const response=await axios.post(`http://localhost:9000/upload`,data)
+         const response=await axios.post(`https://render-share.onrender.com//upload`,data)
          return response.data
         
     } catch (error) {
