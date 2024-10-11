@@ -7,7 +7,7 @@ import path from 'path'
 const app=express()
 app.use(cors())
 app.use('/',router)
-const PORT=9000
+const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve()
 DBConnection()
 app.use(express.static(path.join(__dirname, "/client/build")));
